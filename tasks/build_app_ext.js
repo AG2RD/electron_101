@@ -2,10 +2,8 @@
 
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-const babel = require('gulp-babel');
+var babel = require('gulp-babel');
 
-var watch = require('gulp-watch');
-var batch = require('gulp-batch');
 var plumber = require('gulp-plumber'); // Prevent pipe breaking caused by errors from gulp plugins
 var jetpack = require('fs-jetpack'); //https://github.com/szwacz/fs-jetpack  Better file system API for Node.js
 
