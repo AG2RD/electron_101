@@ -2,6 +2,7 @@
 
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+const babel = require('gulp-babel');
 
 var watch = require('gulp-watch');
 var batch = require('gulp-batch');
@@ -23,4 +24,14 @@ gulp.task('build-js', function(){
   gulp.src( srcDir.path('renderer/**/*.js') )
   .pipe(plumber())
   .pipe( gulp.dest( destDir.path('js/renderer')));
+});
+
+
+
+gulp.task('babel', function(){
+    gulp.src( srcDir.path('renderer/**/*.js') )
+        .pipe(babel({
+            presets: ['es2015']
+        }))
+        .pipe(gulp.dest( destDir.path('js/renderer')));
 });
